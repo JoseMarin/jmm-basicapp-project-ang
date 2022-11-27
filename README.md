@@ -30,3 +30,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Firebase help
 - npm install -g firebase-tools
 - npm install -save firebase @angular/fire
+- ng add @angular/fire
