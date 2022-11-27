@@ -10,6 +10,10 @@ import { AboutComponent } from './about/about.component';
 import { ElementsModule } from './elements/elements.module';
 import { PokemonModule } from './pokemon/pokemon.module';
 import {HttpClientModule} from '@angular/common/http';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,10 @@ import {HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     ElementsModule,
     PokemonModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth())
   ],
   providers: [],
   bootstrap: [AppComponent]
