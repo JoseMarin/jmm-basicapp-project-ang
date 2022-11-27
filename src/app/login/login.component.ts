@@ -12,18 +12,13 @@ export class LoginComponent implements OnInit {
 
   formLogin: FormGroup;
 
-  constructor(
-    private userService: UserService,
-    private router: Router
-  ) {
-    this.formLogin = new FormGroup({
+  constructor(private userService: UserService, private router: Router) {
+      this.formLogin = new FormGroup({
       email: new FormControl(),
       password: new FormControl()
-    })
-  }
+    })}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   onSubmit() {
     this.userService.login(this.formLogin.value)
